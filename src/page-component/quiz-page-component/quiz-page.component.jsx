@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./quiz-page.styles.scss";
 
 import Question from "../../component/question-component/question.component";
 import { useAddQuestion } from "../../Custom-Hook/useAddQuestion";
 
 const QuizPage = () => {
-  let array = [1];
-  const [questions, setQuestions] = useState([1]);
+  var count = 1;
+  const [questions, setQuestions] = useAddQuestion([count]);
   const addQuestion = () => {
-    setQuestions(questions.concat([2]));
-    //console.log(array);
+    count = questions[questions.length - 1];
+    count++;
+    setQuestions(questions.concat([count]));
   };
-  useEffect(() => {
+  const removeQuestion = (questionNumber) => {
+    setQuestions(questions.filter((question) => question != questionNumber));
     console.log(questions);
-  }, [array]);
+  };
+
   return (
     <div className="quiz-page container">
       <h1>Create New Quiz</h1>
 
       {questions.map((question) => (
-        <Question key={question} addQuestion={addQuestion} />
+        <Question
+          key={question}
+          questionNumber={question}
+          addQuestion={addQuestion}
+          removeQuestion={removeQuestion}
+        />
       ))}
     </div>
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import "./question.styles.scss";
-const Question = ({ key, addQuestion }) => {
+const Question = ({ addQuestion, removeQuestion, questionNumber }) => {
   return (
     <div className="box">
       <div className="question-container">
         <input type="text" className="form-control" placeholder="Question" />
         <div className="answer-container">
           <div className="answer-type">
-            <select class="form-control">
+            <select className="form-control">
               <option value="Multi-choice">Multi-choice</option>
               <option value="Checkboxes">Checkboxes</option>
               <option value="Short Answer">Short Answer</option>
@@ -28,7 +28,11 @@ const Question = ({ key, addQuestion }) => {
         </div>
       </div>
       <div className="buttons">
-        <button type="button" className="btn btn-light">
+        <button
+          type="button"
+          className="btn btn-light"
+          onClick={() => removeQuestion(questionNumber)}
+        >
           <i className="fas fa-trash"></i>
         </button>
         <button
