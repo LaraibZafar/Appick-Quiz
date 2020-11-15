@@ -7,20 +7,24 @@ import { useAddQuestion } from "../../Custom-Hook/useAddQuestion";
 const QuizPage = () => {
   var count = 1;
   const [questions, setQuestions] = useAddQuestion([count]);
+
   const addQuestion = () => {
     count = questions[questions.length - 1];
     count++;
     setQuestions(questions.concat([count]));
   };
   const removeQuestion = (questionNumber) => {
-    setQuestions(questions.filter((question) => question != questionNumber));
+    setQuestions(questions.filter((question) => question !== questionNumber));
     console.log(questions);
   };
 
   return (
     <div className="quiz-page container">
       <h1>Create New Quiz</h1>
-
+      <div className="question-format">
+        <h3>Questions will be typed here</h3>
+        <p>Correct Answers will be here</p>
+      </div>
       {questions.map((question) => (
         <Question
           key={question}

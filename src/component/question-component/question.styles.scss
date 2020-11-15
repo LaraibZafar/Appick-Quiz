@@ -10,15 +10,27 @@
     .answer-container {
       margin-top: 30px;
       display: flex;
+      @media only screen and (max-width: 500px) {
+        flex-direction: column;
+      }
       .answer-type {
         width: 45%;
         min-width: fit-content;
         padding-right: 40px;
+        @media only screen and (max-width: 500px) {
+          padding-right: 0px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
       }
       .answer-submission {
         width: 80%;
         input {
           margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 500px) {
+          padding-right: 0px;
+          width: 100%;
         }
       }
     }
