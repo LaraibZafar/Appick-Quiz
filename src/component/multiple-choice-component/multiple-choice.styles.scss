@@ -1,8 +1,17 @@
 .multi-choice {
   width: 80%;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
+
   .input-control {
     margin-bottom: 20px;
     position: relative;
+    input {
+      @media only screen and (max-width: 400px) {
+        font-size: 12px;
+      }
+    }
   }
   .tick {
     color: rgb(15, 199, 15);
@@ -35,7 +44,7 @@
       transition: all 0.1s ease-in-out;
     }
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 800px) {
     padding-right: 0px;
     width: 100%;
   }

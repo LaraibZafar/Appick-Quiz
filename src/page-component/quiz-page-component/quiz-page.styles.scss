@@ -1,10 +1,13 @@
 .quiz-page {
   margin-top: 90px;
   padding: 20px;
-  @media only screen and (max-width: 550px) {
-    margin-top: 5px;
-  }
+
   @media only screen and (max-width: 800px) {
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-left: 5px;
     margin-top: 40px;
   }
   .header {
@@ -15,7 +18,7 @@
 
     .buttons {
       display: flex;
-      @media only screen and (max-width: 550px) {
+      @media only screen and (max-width: 800px) {
         flex-direction: column;
       }
       .btn {
@@ -26,7 +29,7 @@
         margin-left: 20px;
         background-color: black;
         text-align: center;
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 800px) {
           margin-bottom: 10px;
           width: 78px;
         }
@@ -40,7 +43,7 @@
     border-radius: 5px;
     width: 80%;
     background-color: white;
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 800px) {
       padding: 10px 0px 5px 10px;
       width: 80%;
     }
@@ -50,7 +53,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     color: gray;
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 800px) {
       margin-top: 10px;
       font-size: 28px;
     }
@@ -58,12 +61,12 @@
   h3 {
     font-size: 18px;
     font-weight: 600;
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 800px) {
       font-size: 13px;
     }
   }
   p {
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 800px) {
       font-size: 12px;
     }
   }

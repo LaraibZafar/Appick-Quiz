@@ -1,5 +1,8 @@
 .check-box {
   width: 80%;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
   .input-control {
     display: flex;
     position: relative;
@@ -10,7 +13,9 @@
       margin-left: 20px;
       width: 97%;
       margin-bottom: 20px;
-      //background-color: yellow;
+      @media only screen and (max-width: 400px) {
+        font-size: 12px;
+      }
     }
     .tick {
       color: rgb(15, 199, 15);
