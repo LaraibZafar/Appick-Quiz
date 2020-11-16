@@ -2,17 +2,12 @@ import React from "react";
 import "./quiz-page.styles.scss";
 
 import Question from "../../component/question-component/question.component";
-import { useAddQuestion } from "../../Custom-Hook/useAddQuestion";
+import { useAddQuestion, addQuestion } from "../../Custom-Hook/useAddQuestion";
 
 const QuizPage = () => {
   var count = 1;
   const [questions, setQuestions] = useAddQuestion([count]);
 
-  const addQuestion = () => {
-    count = questions[questions.length - 1];
-    count++;
-    setQuestions(questions.concat([count]));
-  };
   const removeQuestion = (questionNumber) => {
     setQuestions(questions.filter((question) => question !== questionNumber));
     console.log(questions);
@@ -20,7 +15,13 @@ const QuizPage = () => {
 
   return (
     <div className="quiz-page container">
-      <h1>Create New Quiz</h1>
+      <div className="header">
+        <h1>Create New Quiz</h1>
+        <div className="buttons">
+          <button className="btn">Save</button>
+          <button className="btn">Cancel</button>
+        </div>
+      </div>
       <div className="question-format">
         <h3>Questions will be typed here</h3>
         <p>Correct Answers will be here</p>
@@ -31,6 +32,8 @@ const QuizPage = () => {
           questionNumber={question}
           addQuestion={addQuestion}
           removeQuestion={removeQuestion}
+          questions={questions}
+          setQuestions={setQuestions}
         />
       ))}
     </div>

@@ -1,6 +1,15 @@
 import React from "react";
 import "./question.styles.scss";
-const Question = ({ addQuestion, removeQuestion, questionNumber }) => {
+
+import MultiChoice from "../multiple-choice-component/multiple-choice.component";
+
+const Question = ({
+  addQuestion,
+  removeQuestion,
+  questionNumber,
+  questions,
+  setQuestions,
+}) => {
   return (
     <div className="box">
       <div className="question-container">
@@ -13,32 +22,23 @@ const Question = ({ addQuestion, removeQuestion, questionNumber }) => {
               <option value="Short Answer">Short Answer</option>
             </select>
           </div>
-          <div className="answer-submission">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Option 1"
-            />
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Option 2"
-            />
-          </div>
+          <MultiChoice />
         </div>
       </div>
       <div className="buttons">
         <button
           type="button"
           className="btn btn-light"
-          onClick={() => removeQuestion(questionNumber)}
+          onClick={() =>
+            removeQuestion(questionNumber, questions, setQuestions)
+          }
         >
           <i className="fas fa-trash"></i>
         </button>
         <button
           type="button"
           className="btn btn-light"
-          onClick={() => addQuestion()}
+          onClick={() => addQuestion(questions, setQuestions)}
         >
           <i className="fas fa-plus-circle"></i>
         </button>

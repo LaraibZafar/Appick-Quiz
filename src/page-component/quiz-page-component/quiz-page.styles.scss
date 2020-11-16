@@ -1,6 +1,32 @@
 .quiz-page {
   margin-top: 50px;
   padding: 20px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+    .buttons {
+      display: flex;
+      @media only screen and (max-width: 500px) {
+        flex-direction: column;
+      }
+      .btn {
+        height: 30px;
+        padding-top: 2px;
+        width: fit-content;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        text-align: center;
+        @media only screen and (max-width: 500px) {
+          margin-bottom: 10px;
+          width: 78px;
+        }
+      }
+    }
+  }
   .question-format {
     padding: 20px 0px 10px 40px;
     margin-bottom: 20px;
@@ -24,7 +50,7 @@
     }
   }
   h3 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 600;
     @media only screen and (max-width: 500px) {
       font-size: 13px;
