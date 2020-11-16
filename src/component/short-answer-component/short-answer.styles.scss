@@ -1,0 +1,10 @@
+.short-answer {
+  width: 80%;
+  textarea {
+    width: 100%;
+  }
+  @media only screen and (max-width: 550px) {
+    padding-right: 0px;
+    width: 100%;
+  }
+}

@@ -10,7 +10,7 @@
 }
 .background {
   width: 100vw;
-  height: 30vh;
+  height: 40vh;
   background-color: gainsboro;
   position: absolute;
   z-index: -1;

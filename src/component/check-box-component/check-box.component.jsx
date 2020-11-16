@@ -1,5 +1,5 @@
 import React from "react";
-import "./multiple-choice.styles.scss";
+import "./check-box.styles.scss";
 
 import {
   useAddQuestion,
@@ -7,16 +7,17 @@ import {
   removeQuestion,
 } from "../../Custom-Hook/useAddQuestion";
 
-const MultipleChoice = () => {
-  const [questions, setQuestions] = useAddQuestion([1, 2]);
+const CheckBoxes = () => {
+  const [questions, setQuestions] = useAddQuestion([1, 2, 3]);
 
   return (
-    <div className="multi-choice">
+    <div className="check-box">
       {questions.map((question) => (
         <div key={question} className="input-control">
+          <input className="form-control check-inp" type="checkbox" />
           <input
             type="text"
-            className="form-control"
+            className="form-control text-inp"
             placeholder={`Option ${question}`}
           />
           <i className="far fa-check-circle tick"></i>
@@ -33,4 +34,4 @@ const MultipleChoice = () => {
   );
 };
 
-export default MultipleChoice;
+export default CheckBoxes;

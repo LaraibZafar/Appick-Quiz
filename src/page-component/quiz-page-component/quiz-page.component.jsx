@@ -2,16 +2,15 @@ import React from "react";
 import "./quiz-page.styles.scss";
 
 import Question from "../../component/question-component/question.component";
-import { useAddQuestion, addQuestion } from "../../Custom-Hook/useAddQuestion";
+import {
+  useAddQuestion,
+  addQuestion,
+  removeQuestion,
+} from "../../Custom-Hook/useAddQuestion";
 
 const QuizPage = () => {
   var count = 1;
   const [questions, setQuestions] = useAddQuestion([count]);
-
-  const removeQuestion = (questionNumber) => {
-    setQuestions(questions.filter((question) => question !== questionNumber));
-    console.log(questions);
-  };
 
   return (
     <div className="quiz-page container">
